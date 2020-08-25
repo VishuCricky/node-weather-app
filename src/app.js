@@ -11,6 +11,7 @@ call that function.
 console.log(path.join(__dirname, "../public")); */
 
 const app = express();
+const port = process.env.PORT || 3000;
 
 // Define paths for Express Config
 const publicDirPath = path.join(__dirname, "../public");
@@ -135,9 +136,12 @@ app.get("/about",(incomingReq, outgoingRes) => {
 
 
 /* 
-To start the server in a particular port,it's not required to mention port 
+To start the server in a particular port locally,it's not required to mention port 
 if we have our own domain, as it will have some default ports
 */
-app.listen(3000,() => {
+/* app.listen(3000,() => {
 	console.log("Server is up on port 3000");
+}); */
+app.listen(port,() => {
+	console.log("Server is up on port "+port);
 });
