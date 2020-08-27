@@ -87,9 +87,7 @@ app.get("/weather",(incomingReq, outgoingRes) => {
 				});
       }
       outgoingRes.send({
-				forecast: `${forecastData.weatherDescription}. 
-				The current temperature is ${forecastData.temperature}, 
-				but it feels like ${forecastData.feelsLike}. The humidity is ${forecastData.humidity}%.`,
+				forecast: `${forecastData.weatherDescription}.The current temperature is ${forecastData.temperature}, but it feels like ${forecastData.feelsLike}. The humidity is ${forecastData.humidity}%.`,
 				location,
 				address
 			});
